@@ -291,12 +291,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Snake" />
-      <item itemvalue="Python.memory_tutorial" />
       <item itemvalue="Python.RacingCar_Tutorial" />
-      <item itemvalue="Python.memory" />
+      <item itemvalue="Python.Snake" />
       <item itemvalue="Python.Tutorial1" />
       <item itemvalue="Python.Tutorial2" />
+      <item itemvalue="Python.memory" />
+      <item itemvalue="Python.memory_tutorial" />
     </list>
   </component>
   <component name="SvnConfiguration">
