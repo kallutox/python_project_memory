@@ -15,15 +15,15 @@
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$Tutorial2.coverage" NAME="Tutorial2 Coverage Results" MODIFIED="1547490888007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$RacingCar_Tutorial.coverage" NAME="RacingCar_Tutorial Coverage Results" MODIFIED="1547496697027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$Snake.coverage" NAME="Snake Coverage Results" MODIFIED="1547496702463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$memory.coverage" NAME="memory Coverage Results" MODIFIED="1548009942145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$memory.coverage" NAME="memory Coverage Results" MODIFIED="1548609111224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="51" column="93" selection-start-line="51" selection-start-column="93" selection-end-line="51" selection-end-column="93" />
+            <state relative-caret-position="-1753">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -32,37 +32,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memory_tutorial.py">
+        <entry file="file://$USER_HOME$/Desktop/Uni/5. Semester/Python/Studienleistung/aufgabe3/ziegen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="291" column="10" lean-forward="true" selection-start-line="291" selection-start-column="10" selection-end-line="291" selection-end-column="10" />
-              <folding>
-                <element signature="e#139#165#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="41" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tutorial1.py">
+        <entry file="file://$USER_HOME$/Downloads/15-super.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="72" column="4" lean-forward="true" selection-start-line="72" selection-start-column="4" selection-end-line="76" selection-end-column="24" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RacingCar_Tutorial.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1307">
-              <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="969">
+              <caret line="57" column="13" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -92,6 +74,9 @@
       <find>init</find>
       <find>print</find>
       <find>quit</find>
+      <find>pos[0]</find>
+      <find>random</find>
+      <find>super</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,6 +95,7 @@
         <option value="$PROJECT_DIR$/Memory_Tutorial.py" />
         <option value="$PROJECT_DIR$/memory_tutorial.py" />
         <option value="$PROJECT_DIR$/youtube.py" />
+        <option value="$USER_HOME$/Downloads/15-super.py" />
         <option value="$PROJECT_DIR$/memory.py" />
       </list>
     </option>
@@ -124,7 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,6 +121,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -144,6 +130,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -291,12 +278,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.RacingCar_Tutorial" />
       <item itemvalue="Python.Snake" />
+      <item itemvalue="Python.memory_tutorial" />
+      <item itemvalue="Python.RacingCar_Tutorial" />
+      <item itemvalue="Python.memory" />
       <item itemvalue="Python.Tutorial1" />
       <item itemvalue="Python.Tutorial2" />
-      <item itemvalue="Python.memory" />
-      <item itemvalue="Python.memory_tutorial" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -312,22 +299,24 @@
       <workItem from="1547461968215" duration="4873000" />
       <workItem from="1547486563535" duration="10232000" />
       <workItem from="1548000973988" duration="8776000" />
+      <workItem from="1548595572448" duration="563000" />
+      <workItem from="1548596293228" duration="10510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23881000" />
+    <option name="totallyTimeSpent" value="34954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13825503" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14228188" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23512748" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -367,47 +356,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorial1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="72" column="4" lean-forward="true" selection-start-line="72" selection-start-column="4" selection-end-line="76" selection-end-column="24" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RacingCar_Tutorial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1307">
-          <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/youtube.py" />
     <entry file="file://$PROJECT_DIR$/memory_tutorial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="291" column="10" lean-forward="true" selection-start-line="291" selection-start-column="10" selection-end-line="291" selection-end-column="10" />
+        <state relative-caret-position="4930">
+          <caret line="291" column="10" selection-start-line="291" selection-start-column="10" selection-end-line="291" selection-end-column="10" />
           <folding>
             <element signature="e#139#165#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/youtube.py">
+    <entry file="file://$USER_HOME$/Desktop/Uni/5. Semester/Python/Studienleistung/aufgabe3/ziegen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+        <state relative-caret-position="136">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="41" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RacingCar_Tutorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tutorial1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="76" selection-end-column="24" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/15-super.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="13" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/memory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="51" column="93" selection-start-line="51" selection-start-column="93" selection-end-line="51" selection-end-column="93" />
+        <state relative-caret-position="-1753">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
