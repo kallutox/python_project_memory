@@ -44,7 +44,8 @@ mouse_y = 0
 
 pygame.font.init()
 font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
-headline = font.render('Fruit Memory!', False, 255, 255, 255))
+headline = font.render('Fruit Memory!', False, (255, 255, 255))
+test
 
 
 # Images ---> gameDisplay.blit(Img, (x,y))
