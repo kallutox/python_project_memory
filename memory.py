@@ -22,7 +22,7 @@ def draw_fruits_random():
     for i in range(16):
         draw_fruit(i, random_pos[i])
 
-
+# test
 
 
 
