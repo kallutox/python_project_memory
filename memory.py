@@ -43,8 +43,8 @@ mouse_x = 0
 mouse_y = 0
 
 pygame.font.init()
-font = pygame.font.SysFont('Comic Sans MS', 50)
-headline = font.render('Fruit Memory!', False, (0, 0, 0))
+font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
+headline = font.render('Fruit Memory!', False, 255, 255, 255))
 
 
 # Images ---> gameDisplay.blit(Img, (x,y))
@@ -152,4 +152,3 @@ while pairs_left:
     pygame.display.flip()
 
     clock.tick(fps)
-
