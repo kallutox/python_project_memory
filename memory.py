@@ -1,5 +1,7 @@
 import pygame
 import random
+import pygameMenu
+from pygameMenu.locals import *
 import sys
 
 
@@ -42,24 +44,28 @@ pygame.display.set_caption("Fruit Memory!")
 mouse_x = 0
 mouse_y = 0
 
+# Game Title and Menu
 pygame.font.init()
+white = (255, 255, 255)
 font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
-headline = font.render('Fruit Memory!', False, (255, 255, 255))
-test
+headline = font.render('Fruit Memory!', False, white)
+
+
+
 
 
 # Images ---> gameDisplay.blit(Img, (x,y))
 apfelImg = pygame.image.load('images/apfel.jpg')
 bananeImg = pygame.image.load('images/banane.jpg')
 erdbeereImg = pygame.image.load('images/erdbeere.jpg')
-heidelbeereImg = pygame.image.load('images/heidelbeere.jpg')
+weintraubeImg = pygame.image.load('images/weintraube.jpg')
 kirscheImg = pygame.image.load('images/kirsche.jpg')
 kiwiImg = pygame.image.load('images/kiwi.jpg')
 orangeImg = pygame.image.load('images/orange.jpg')
 wassermeloneImg = pygame.image.load('images/wassermelone.jpg')
 
-fruits = [apfelImg, bananeImg, erdbeereImg, heidelbeereImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg,
-            apfelImg, bananeImg, erdbeereImg, heidelbeereImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg]
+fruits = [apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg,
+            apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg]
 
 
 # Positions
