@@ -55,8 +55,9 @@ size_menu.add_selector('Select Size of Field', [('Small', 'SMALL'),
                       ('Large', 'LARGE')],
                       onreturn=None,
                       onchange=change_difficulty)
-play_menu.add_option('Return to main menu', PYGAME_MENU_BACK)
 '''
+size_menu.add_option('Return to main menu', PYGAME_MENU_BACK)
+
 
 player_menu = pygameMenu.TextMenu(surface,
                                   bgfun=main_background,
@@ -83,8 +84,39 @@ player_menu.add_selector('Select Size of Field', [('Small', 'SMALL'),
                       ('Large', 'LARGE')],
                       onreturn=None,
                       onchange=change_difficulty)
+                      '''
 player_menu.add_option('Return to main menu', PYGAME_MENU_BACK)
-'''
+
+
+game_menu = pygameMenu.TextMenu(surface,
+                                bgfun=main_background,
+                                color_selected=white,
+                                font=pygameMenu.fonts.FONT_BEBAS,
+                                font_color=white,
+                                font_size=30,
+                                menu_alpha=100,
+                                menu_color=menu_background,
+                                menu_height=int(screen_height * 0.6),
+                                menu_width=int(screen_width * 0.6),
+                                onclose=PYGAME_MENU_DISABLE_CLOSE,
+                                option_shadow=False,
+                                title='Start Game',
+                                window_height=screen_height,
+                                window_width=screen_width
+                                )
+
+Play_Info = ['Start  Game  with  Default  Settings:',
+             'Size of Field: Small',
+             'Number of Players: 2']
+
+for m in Play_Info:
+    game_menu.add_line(m)
+    game_menu.add_line(PYGAMEMENU_TEXT_NEWLINE)
+
+# game_menu.add_option('Start Game', )
+game_menu.add_option('Return to menu', PYGAME_MENU_BACK)
+
+
 
 main_menu = pygameMenu.Menu(surface,
                             bgfun=main_background,
@@ -104,7 +136,7 @@ main_menu = pygameMenu.Menu(surface,
                             )
 
 
-#main_menu.add_option('Start Game', )
+main_menu.add_option('Start Game', game_menu)
 main_menu.add_option('Number of Players', player_menu, pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
 main_menu.add_option('Size of Field', size_menu, pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
 main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
