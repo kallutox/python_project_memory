@@ -62,13 +62,13 @@ mouse_y = 0
 # Game Title and Menu
 pygame.font.init()
 title = 'Fruit Memory!'
-font = pygame.font.SysFont(pygameMenu.fonts.FONT_BEBAS, 50, bold=True, italic=True)
+font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
 headline = font.render(title, False, white)
 
 
 # Menu and choice of options
 
-
+'''
 def main_background():
     surface.fill(orange)
 
@@ -129,7 +129,7 @@ main_menu = pygameMenu.Menu(surface,
 main_menu.add_option('Choose Number of Players', player_menu)
 main_menu.add_option('Choose Size of Field', size_menu)
 main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
-
+'''
 
 # Images ---> gameDisplay.blit(Img, (x,y))
 apfelImg = pygame.image.load('images/apfel.jpg')
@@ -217,7 +217,7 @@ while pairs_left:
             exit()
 
     # Main menu
-    main_menu.mainloop(events)
+    # main_menu.mainloop(events)
 
     screen.fill(background_color)
 
