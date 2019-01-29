@@ -1,10 +1,26 @@
 import pygame
+from pygame.locals import *
 import random
 import pygameMenu
 from pygameMenu.locals import *
 import sys
 
+#https://github.com/ppizarror/pygame-menu
 
+
+black = (0, 0, 0)
+white = (255, 255, 255)
+orange = (255, 165, 0)
+lightblue = (173, 216, 230)
+background_color = orange
+fps = 30.0
+menu_colour = (200, 200, 200)
+screen_width = 800
+screen_height = 640
+screen_size = (screen_width, screen_height)
+
+# Create screen and objects
+surface = pygame.display.set_mode(screen_size)
 
 # Spieleranzahl: 2-8
 # Kartenanzahl: 16
@@ -13,8 +29,6 @@ import sys
 '''
 Objects - put Python classes and functions here
 '''
-orange = (255, 165, 0)
-lightblue = (173,216,230)
 
 
 def draw_fruit(i, (x, y)):
@@ -23,9 +37,6 @@ def draw_fruit(i, (x, y)):
 def draw_fruits_random():
     for i in range(16):
         draw_fruit(i, random_pos[i])
-
-# test
-
 
 
 '''
@@ -46,12 +57,17 @@ mouse_y = 0
 
 # Game Title and Menu
 pygame.font.init()
-white = (255, 255, 255)
+title = 'Fruit Memory!'
 font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
-headline = font.render('Fruit Memory!', False, white)
+headline = font.render(title, False, white)
 
+#Menu doesn't work yet
+main_menu = pygameMenu.Menu(screen, screen_width, screen, font, title)
+game_size_menu = pygameMenu.Menu(screen, screen_width, screen, font, "Choose a size for the game's field:")
 
-
+main_menu.add_option('Start Game', )
+main_menu.add_option('Choose Size of Field', game_size_menu)
+main_menu.add_option('Exit', PYGAME_MENU_EXIT)
 
 
 # Images ---> gameDisplay.blit(Img, (x,y))
@@ -65,7 +81,7 @@ orangeImg = pygame.image.load('images/orange.jpg')
 wassermeloneImg = pygame.image.load('images/wassermelone.jpg')
 
 fruits = [apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg,
-            apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg]
+          apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg]
 
 
 # Positions
@@ -133,6 +149,13 @@ while pairs_left:
             pygame.quit()
             quit()
 
+
+    '''
+    # Main menu
+    game_menu.mainloop(events)
+    '''
+
+
     screen.fill(background_color)
 
     screen.blit(headline, (screen_width/2 - 150, 0))
@@ -159,3 +182,4 @@ while pairs_left:
     pygame.display.flip()
 
     clock.tick(fps)
+
