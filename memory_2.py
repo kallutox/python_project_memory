@@ -6,105 +6,85 @@ from pygameMenu.locals import *
 import os
 import sys
 
-#https://github.com/ppizarror/pygame-menu
-
-
+orange = (255, 165, 0)
 black = (0, 0, 0)
 white = (255, 255, 255)
-orange = (255, 165, 0)
-lightblue = (173, 216, 230)
-background_color = orange
-fps = 30.0
-menu_colour = (200, 200, 200)
+fps = 60.0
+menu_background = (190, 190, 190)
 screen_width = 800
 screen_height = 640
 screen_size = (screen_width, screen_height)
+clock = pygame.time.Clock()
+
+pygame.init()
+os.environ['SDL_VIDEO_CENTERED'] = '1'
+
+# Create pygame screen and objects
+surface = pygame.display.set_mode(screen_size)
 pygame.display.set_caption('Fruit Memory')
 clock = pygame.time.Clock()
 dt = 1 / fps
 
-# Create screen and objects
-surface = pygame.display.set_mode(screen_size)
-
-# Spieleranzahl: 2-8
-# Kartenanzahl: 16
-
-
-'''
-Objects - put Python classes and functions here
-'''
-
-
-def draw_fruit(i, (x, y)):
-    screen.blit(fruits[i], (x, y))
-
-def draw_fruits_random():
-    for i in range(16):
-        draw_fruit(i, random_pos[i])
-
-
-'''
-Setup - put run-once  code here
-'''
-background_color = orange
-screen_width = 800
-screen_height = 640
-
-clock = pygame.time.Clock()
-fps = 30
-
-screen = pygame.display.set_mode([screen_width, screen_height])
-pygame.display.set_caption("Fruit Memory!")
-
-mouse_x = 0
-mouse_y = 0
-
-# Game Title and Menu
-pygame.font.init()
-title = 'Fruit Memory!'
-font = pygame.font.SysFont(pygameMenu.fonts.FONT_BEBAS, 50, bold=True, italic=True)
-headline = font.render(title, False, white)
-
-
-# Menu and choice of options
 
 
 def main_background():
     surface.fill(orange)
 
+
 size_menu = pygameMenu.Menu(surface,
                             bgfun=main_background,
                             color_selected=white,
                             font=pygameMenu.fonts.FONT_BEBAS,
-                            font_color=black,
+                            font_color=white,
                             font_size=30,
                             menu_alpha=100,
-                            menu_color=white,
+                            menu_color=menu_background,
                             menu_height=int(screen_height * 0.6),
                             menu_width=int(screen_width * 0.6),
                             onclose=PYGAME_MENU_DISABLE_CLOSE,
                             option_shadow=False,
-                            title='Choose Size of Field',
+                            title='Select Size of Field',
                             window_height=screen_height,
                             window_width=screen_width
                             )
+'''
+size_menu.add_option('Start', play_function, DIFFICULTY,
+                     pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
+size_menu.add_selector('Select Size of Field', [('Small', 'SMALL'),
+                      ('Medium', 'MEDIUM'),
+                      ('Large', 'LARGE')],
+                      onreturn=None,
+                      onchange=change_difficulty)
+play_menu.add_option('Return to main menu', PYGAME_MENU_BACK)
+'''
 
-player_menu = pygameMenu.Menu(surface,
-                              bgfun=main_background,
-                              color_selected=white,
-                              font=pygameMenu.fonts.FONT_BEBAS,
-                              font_color=black,
-                              font_size=30,
-                              menu_alpha=100,
-                              menu_color=white,
-                              menu_height=int(screen_height * 0.6),
-                              menu_width=int(screen_width * 0.6),
-                              onclose=PYGAME_MENU_DISABLE_CLOSE,
-                              option_shadow=False,
-                              title='Choose Number of Players',
-                              window_height=screen_height,
-                              window_width=screen_width
-                              )
+player_menu = pygameMenu.TextMenu(surface,
+                                  bgfun=main_background,
+                                  color_selected=white,
+                                  font=pygameMenu.fonts.FONT_BEBAS,
+                                  font_color=white,
+                                  font_size=30,
+                                  menu_alpha=100,
+                                  menu_color=menu_background,
+                                  menu_height=int(screen_height * 0.6),
+                                  menu_width=int(screen_width * 0.6),
+                                  onclose=PYGAME_MENU_DISABLE_CLOSE,
+                                  option_shadow=False,
+                                  title='Select Number',
+                                  window_height=screen_height,
+                                  window_width=screen_width
+                                  )
+
+'''
+player_menu.add_option('Start', play_function, DIFFICULTY,
+                     pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
+player_menu.add_selector('Select Size of Field', [('Small', 'SMALL'),
+                      ('Medium', 'MEDIUM'),
+                      ('Large', 'LARGE')],
+                      onreturn=None,
+                      onchange=change_difficulty)
+player_menu.add_option('Return to main menu', PYGAME_MENU_BACK)
+'''
 
 main_menu = pygameMenu.Menu(surface,
                             bgfun=main_background,
@@ -113,7 +93,7 @@ main_menu = pygameMenu.Menu(surface,
                             font_color=white,
                             font_size=30,
                             menu_alpha=100,
-                            menu_color=white,
+                            menu_color=menu_background,
                             menu_height=int(screen_height * 0.6),
                             menu_width=int(screen_width * 0.6),
                             onclose=PYGAME_MENU_DISABLE_CLOSE,
@@ -124,11 +104,11 @@ main_menu = pygameMenu.Menu(surface,
                             )
 
 
-
 #main_menu.add_option('Start Game', )
-main_menu.add_option('Choose Number of Players', player_menu)
-main_menu.add_option('Choose Size of Field', size_menu)
+main_menu.add_option('Number of Players', player_menu, pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
+main_menu.add_option('Size of Field', size_menu, pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
 main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
+
 
 
 # Images ---> gameDisplay.blit(Img, (x,y))
@@ -143,6 +123,15 @@ wassermeloneImg = pygame.image.load('images/wassermelone.jpg')
 
 fruits = [apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg,
           apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, orangeImg, wassermeloneImg]
+
+
+#
+def draw_fruit(i, (x, y)):
+    surface.blit(fruits[i], (x, y))
+
+def draw_fruits_random():
+    for i in range(16):
+        draw_fruit(i, random_pos[i])
 
 
 # Positions
@@ -166,7 +155,6 @@ pos.append((120, 520))
 pos.append((280, 520))
 pos.append((440, 520))
 pos.append((600, 520))
-
 
 
 # Rectangles
@@ -199,16 +187,11 @@ random_pos = list(pos)
 random.shuffle(random_pos)
 
 
+# Main loop
+while True:
 
-'''
-Main loop - put game loop here
-'''
-pairs_left = True
-while pairs_left:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
+    # Tick
+    clock.tick(60)
 
     # Application events
     events = pygame.event.get()
@@ -219,30 +202,6 @@ while pairs_left:
     # Main menu
     main_menu.mainloop(events)
 
-    screen.fill(background_color)
-
-    screen.blit(headline, (screen_width/2 - 150, 0))
-
-    pygame.draw.rect(screen, lightblue, rect0)
-    pygame.draw.rect(screen, lightblue, rect1)
-    pygame.draw.rect(screen, lightblue, rect2)
-    pygame.draw.rect(screen, lightblue, rect3)
-    pygame.draw.rect(screen, lightblue, rect4)
-    pygame.draw.rect(screen, lightblue, rect5)
-    pygame.draw.rect(screen, lightblue, rect6)
-    pygame.draw.rect(screen, lightblue, rect7)
-    pygame.draw.rect(screen, lightblue, rect8)
-    pygame.draw.rect(screen, lightblue, rect9)
-    pygame.draw.rect(screen, lightblue, rect10)
-    pygame.draw.rect(screen, lightblue, rect11)
-    pygame.draw.rect(screen, lightblue, rect12)
-    pygame.draw.rect(screen, lightblue, rect13)
-    pygame.draw.rect(screen, lightblue, rect14)
-    pygame.draw.rect(screen, lightblue, rect15)
-
-    draw_fruits_random()
-
+    # Flip surface
     pygame.display.flip()
-
-    clock.tick(fps)
 
