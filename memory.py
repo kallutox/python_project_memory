@@ -18,6 +18,9 @@ menu_colour = (200, 200, 200)
 screen_width = 800
 screen_height = 640
 screen_size = (screen_width, screen_height)
+pygame.display.set_caption('Memory -- Menu')
+clock = pygame.time.Clock()
+dt = 1 / fps
 
 # Create screen and objects
 surface = pygame.display.set_mode(screen_size)
@@ -61,12 +64,51 @@ title = 'Fruit Memory!'
 font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
 headline = font.render(title, False, white)
 
-#Menu doesn't work yet
-main_menu = pygameMenu.Menu(screen, screen_width, screen, font, title)
-game_size_menu = pygameMenu.Menu(screen, screen_width, screen, font, "Choose a size for the game's field:")
 
-main_menu.add_option('Start Game', )
-main_menu.add_option('Choose Size of Field', game_size_menu)
+# Menu doesn't work yet
+
+
+def main_background():
+    surface.fill(orange)
+
+
+main_menu = pygameMenu.Menu(surface,
+                            bgfun=main_background,
+                            color_selected=white,
+                            font=pygameMenu.fonts.FONT_BEBAS,
+                            font_color=white,
+                            font_size=30,
+                            menu_alpha=100,
+                            menu_color=white,
+                            menu_height=int(screen_height * 0.6),
+                            menu_width=int(screen_width * 0.6),
+                            onclose=PYGAME_MENU_DISABLE_CLOSE,
+                            option_shadow=False,
+                            title='Fruit Memory',
+                            window_height=screen_height,
+                            window_width=screen_width
+                            )
+
+size_menu = pygameMenu.Menu(surface,
+                            bgfun=main_background,
+                            color_selected=white,
+                            font=pygameMenu.fonts.FONT_BEBAS,
+                            font_color=white,
+                            font_size=30,
+                            menu_alpha=100,
+                            menu_color=white,
+                            menu_height=int(screen_height * 0.6),
+                            menu_width=int(screen_width * 0.6),
+                            onclose=PYGAME_MENU_DISABLE_CLOSE,
+                            option_shadow=False,
+                            title='Choose Size of Field',
+                            window_height=screen_height,
+                            window_width=screen_width
+                            )
+
+
+#main_menu.add_option('Start Game', )
+main_menu.add_option('Choose Size of Field', size_menu)
 main_menu.add_option('Exit', PYGAME_MENU_EXIT)
 
 
@@ -149,12 +191,14 @@ while pairs_left:
             pygame.quit()
             quit()
 
+    # Application events
+    events = pygame.event.get()
+    for event in events:
+        if event.type == QUIT:
+            exit()
 
-    '''
     # Main menu
-    game_menu.mainloop(events)
-    '''
-
+    main_menu.mainloop(events)
 
     screen.fill(background_color)
 
