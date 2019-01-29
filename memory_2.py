@@ -18,13 +18,62 @@ clock = pygame.time.Clock()
 pygame.init()
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 
-# Create pygame screen and objects
+# Create screen and objects
 surface = pygame.display.set_mode(screen_size)
 pygame.display.set_caption('Fruit Memory')
 clock = pygame.time.Clock()
 dt = 1 / fps
 
+player_num = 0
+game_size = ''
 
+# functions for game
+
+'''
+# set number of players
+def set_num_players(player_num):
+
+
+# set size of field (4x4, 6x6, 8x8?)
+def set_field_size(game_size):
+
+
+# start game
+def play_function(p_num, g_size):
+
+    set_num_players(p_num)
+    set_field_size(g_size)
+
+    
+    main_menu.disable()
+    main_menu.reset(1)
+    
+
+    while True:
+
+        clock.tick(60)
+
+        # Application events
+        playevents = pygame.event.get()
+        for e in playevents:
+            if e.type == QUIT:
+                exit()
+            elif e.type == KEYDOWN:
+                if e.key == K_ESCAPE and main_menu.is_disabled():
+                    main_menu.enable()
+
+                    # Quit this function, then skip to loop of main-menu on line 217
+                    return
+
+        # Pass events to main_menu
+        main_menu.mainloop(playevents)
+        
+        # Continue playing
+        surface.fill(bg_color)
+        surface.blit(f, ((WINDOW_SIZE[0] - f_width) / 2, WINDOW_SIZE[1] / 2))
+        pygame.display.flip()
+        
+'''
 def main_background():
     surface.fill(orange)
 
@@ -106,15 +155,27 @@ game_menu = pygameMenu.TextMenu(surface,
 
 # Zu Machen: Dieser Text wird nur gezeigt, falls keine anderen Einstellungen im Menu vorgenommen
 # Ansonsten wird hier die Auswahl des Users aus den anderen Menus gezeigt
-Play_Info = ['Start  Game  with  Default  Settings:',
-             'Size of Field: Small',
-             'Number of Players: 2']
+
+
+Play_Info_Players = 'Number of Players: 2'
+Play_Info_Size = 'Size of Field: Small'
+
+if player_num != 0:
+    Play_Info_Players = 'Number of Players:  ' + player_num
+if game_size != '':
+    Play_Info_Size = 'Size of Field:  ' + game_size
+
+Play_Info = [Play_Info_Players,
+             Play_Info_Size]
 
 for m in Play_Info:
     game_menu.add_line(m)
     game_menu.add_line(PYGAMEMENU_TEXT_NEWLINE)
 
 # game_menu.add_option('Start Game', )
+# game_menu.add_option('Start Game', play_function, DIFFICULTY,
+#                     pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
+# game_menu.add_option('Start Game', play_function(player_num, game_size))
 game_menu.add_option('Return to menu', PYGAME_MENU_BACK)
 
 
