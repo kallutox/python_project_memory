@@ -4,7 +4,6 @@ import random
 import pygameMenu
 from pygameMenu.locals import *
 import os
-import sys
 
 orange = (255, 165, 0)
 black = (0, 0, 0)
@@ -26,11 +25,11 @@ clock = pygame.time.Clock()
 dt = 1 / fps
 
 
-
 def main_background():
     surface.fill(orange)
 
 
+# Menu for changing size of field
 size_menu = pygameMenu.Menu(surface,
                             bgfun=main_background,
                             color_selected=white,
@@ -58,7 +57,7 @@ size_menu.add_selector('Select Size of Field', [('Small', 'SMALL'),
 '''
 size_menu.add_option('Return to main menu', PYGAME_MENU_BACK)
 
-
+# Menu for changing number of players
 player_menu = pygameMenu.TextMenu(surface,
                                   bgfun=main_background,
                                   color_selected=white,
@@ -87,7 +86,7 @@ player_menu.add_selector('Select Size of Field', [('Small', 'SMALL'),
                       '''
 player_menu.add_option('Return to main menu', PYGAME_MENU_BACK)
 
-
+# Menu for starting game
 game_menu = pygameMenu.TextMenu(surface,
                                 bgfun=main_background,
                                 color_selected=white,
@@ -105,6 +104,8 @@ game_menu = pygameMenu.TextMenu(surface,
                                 window_width=screen_width
                                 )
 
+# Zu Machen: Dieser Text wird nur gezeigt, falls keine anderen Einstellungen im Menu vorgenommen
+# Ansonsten wird hier die Auswahl des Users aus den anderen Menus gezeigt
 Play_Info = ['Start  Game  with  Default  Settings:',
              'Size of Field: Small',
              'Number of Players: 2']
@@ -115,7 +116,6 @@ for m in Play_Info:
 
 # game_menu.add_option('Start Game', )
 game_menu.add_option('Return to menu', PYGAME_MENU_BACK)
-
 
 
 main_menu = pygameMenu.Menu(surface,
@@ -142,7 +142,6 @@ main_menu.add_option('Size of Field', size_menu, pygame.font.Font(pygameMenu.fon
 main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
 
 
-
 # Images ---> gameDisplay.blit(Img, (x,y))
 apfelImg = pygame.image.load('images/apfel.jpg')
 bananeImg = pygame.image.load('images/banane.jpg')
@@ -160,6 +159,7 @@ fruits = [apfelImg, bananeImg, erdbeereImg, weintraubeImg, kirscheImg, kiwiImg, 
 #
 def draw_fruit(i, (x, y)):
     surface.blit(fruits[i], (x, y))
+
 
 def draw_fruits_random():
     for i in range(16):
