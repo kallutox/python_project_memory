@@ -131,6 +131,11 @@ main_menu.add_option('Choose Size of Field', size_menu)
 main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
 '''
 
+
+
+
+
+
 # Images ---> gameDisplay.blit(Img, (x,y))
 apfelImg = pygame.image.load('images/apfel.jpg')
 bananeImg = pygame.image.load('images/banane.jpg')
