@@ -11,6 +11,7 @@ import time
 # https://github.com/ppizarror/pygame-menu
 
 
+
 black = (0, 0, 0)
 white = (255, 255, 255)
 orange = (255, 165, 0)
@@ -59,9 +60,12 @@ score = 0
 chosen = 0
 card_1 = 0
 card_2 = 0
+opened_card = None
+
 
 def open_cards():
     counter = 0
+    global opened_card
     global score
     global chosen
     global card_1
@@ -69,24 +73,29 @@ def open_cards():
     for i in rectangles:
         if i.collidepoint(mouse):
             print "card " + str(counter) + " clicked"
-
-            chosen += 1
-            if chosen == 1:
+            print str(chosen)
+            print opened_card, card_2
+            if chosen == 0:
+                chosen += 1
                 card_1 = counter
                 rectangles[card_1].move_ip(70, 0)
+                opened_card = card_1
 
-            if chosen == 2:
+            elif chosen == 1 and opened_card != counter:
+                chosen += 1
+                opened_card = None
                 card_2 = counter
                 rectangles[card_2].move_ip(70, 0)
-                chosen = 0
+
+                #chosen = 0
                 print "2 cards chosen!"
                 if check_cards(card_1, card_2) is True:
                     print "right pick!"
                     rectangles[card_1].move_ip(0, 2000)
                     rectangles[card_2].move_ip(0, 2000)
                     score += 1
-                else:
-                    close_cards()
+                #else:
+                 #   close_cards()
 
         counter += 1
 
@@ -300,7 +309,11 @@ while pairs_left:
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = pygame.mouse.get_pos()
             mouse = (mouse_x, mouse_y)
-            open_cards()
+            if chosen == 2:
+                close_cards()
+                chosen = 0
+            else:
+                open_cards() #pygame timer event ?
 
 
 
