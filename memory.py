@@ -16,6 +16,7 @@ black = (0, 0, 0)
 white = (255, 255, 255)
 orange = (255, 165, 0)
 lightblue = (173, 216, 230)
+navy_blue = (0, 0, 128)
 background_color = orange
 fps = 30.0
 menu_colour = (200, 200, 200)
@@ -56,7 +57,7 @@ def draw_all_rectangles():
         draw_rectangle(i)
 
 
-score = 0
+score_1 = 0
 chosen = 0
 card_1 = 0
 card_2 = 0
@@ -65,16 +66,16 @@ opened_card = None
 
 def open_cards():
     counter = 0
+    global player_1
     global opened_card
-    global score
+    global fin
+    global score_1
     global chosen
     global card_1
     global card_2
     for i in rectangles:
         if i.collidepoint(mouse):
             print "card " + str(counter) + " clicked"
-            print str(chosen)
-            print opened_card, card_2
             if chosen == 0:
                 chosen += 1
                 card_1 = counter
@@ -93,9 +94,12 @@ def open_cards():
                     print "right pick!"
                     rectangles[card_1].move_ip(0, 2000)
                     rectangles[card_2].move_ip(0, 2000)
-                    score += 1
-                #else:
-                 #   close_cards()
+                    score_1 += 10
+                    player_1 = score_font.render('Player 1: ' + str(score_1), False, navy_blue)
+                    chosen = 0
+
+                    if score_1 == 10:
+                        fin = fin_font.render('All fruits found!', True, white, black)
 
         counter += 1
 
@@ -142,81 +146,30 @@ fps = 30
 screen = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption("Fruit Memory!")
 
+
 mouse_x = 0
 mouse_y = 0
 
 
 # Game Title and Menu
+# how to display text aus: https://sivasantosh.wordpress.com/2012/07/18/displaying-text-in-pygame/
 pygame.font.init()
 title = 'Fruit Memory!'
-font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
-headline = font.render(title, False, white)
+headline_font = pygame.font.SysFont('Calibri', 50, bold=True, italic=True)
+headline = headline_font.render(title, False, white)
+
+
+score_font = pygame.font.SysFont('Calibri', 30, bold=True, italic=False)
+player_1 = score_font.render('Player 1: ' + str(score_1), False, navy_blue)
+
+
+fin_font = pygame.font.SysFont('Calibri', 123, bold=True, italic=False)
+fin = fin_font.render('', False, (255, 255, 255))
+
+
 
 
 # Menu and choice of options
-
-'''
-def main_background():
-    surface.fill(orange)
-
-size_menu = pygameMenu.Menu(surface,
-                            bgfun=main_background,
-                            color_selected=white,
-                            font=pygameMenu.fonts.FONT_BEBAS,
-                            font_color=black,
-                            font_size=30,
-                            menu_alpha=100,
-                            menu_color=white,
-                            menu_height=int(screen_height * 0.6),
-                            menu_width=int(screen_width * 0.6),
-                            onclose=PYGAME_MENU_DISABLE_CLOSE,
-                            option_shadow=False,
-                            title='Choose Size of Field',
-                            window_height=screen_height,
-                            window_width=screen_width
-                            )
-
-player_menu = pygameMenu.Menu(surface,
-                              bgfun=main_background,
-                              color_selected=white,
-                              font=pygameMenu.fonts.FONT_BEBAS,
-                              font_color=black,
-                              font_size=30,
-                              menu_alpha=100,
-                              menu_color=white,
-                              menu_height=int(screen_height * 0.6),
-                              menu_width=int(screen_width * 0.6),
-                              onclose=PYGAME_MENU_DISABLE_CLOSE,
-                              option_shadow=False,
-                              title='Choose Number of Players',
-                              window_height=screen_height,
-                              window_width=screen_width
-                              )
-
-main_menu = pygameMenu.Menu(surface,
-                            bgfun=main_background,
-                            color_selected=white,
-                            font=pygameMenu.fonts.FONT_BEBAS,
-                            font_color=white,
-                            font_size=30,
-                            menu_alpha=100,
-                            menu_color=white,
-                            menu_height=int(screen_height * 0.6),
-                            menu_width=int(screen_width * 0.6),
-                            onclose=PYGAME_MENU_DISABLE_CLOSE,
-                            option_shadow=False,
-                            title='Fruit Memory',
-                            window_height=screen_height,
-                            window_width=screen_width
-                            )
-
-
-
-#main_menu.add_option('Start Game', )
-main_menu.add_option('Choose Number of Players', player_menu)
-main_menu.add_option('Choose Size of Field', size_menu)
-main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
-'''
 
 
 
@@ -322,10 +275,14 @@ while pairs_left:
 
     screen.fill(background_color)
 
-    screen.blit(headline, (screen_width/2 - 150, 0))
-
     draw_fruits_random()
     draw_all_rectangles()
+
+    screen.blit(headline, (screen_width/2 - 150, 0))
+    screen.blit(player_1, (10, 10))
+    screen.blit(fin, (0, screen_height/2 - 80))
+
+
 
 
 
@@ -334,6 +291,6 @@ while pairs_left:
 
     clock.tick(fps)
 
-    if score == 8:
+    if score_1 == 80:
         pygame.quit()
         quit()
