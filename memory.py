@@ -215,6 +215,30 @@ fruits = [apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg, we
           kirscheImg, kirscheImg, kiwiImg, kiwiImg, orangeImg, orangeImg, wassermeloneImg, wassermeloneImg]
 
 
+ananasImg = pygame.image.load('images/6x6/ananas.PNG')
+apfel_rotImg = pygame.image.load('images/6x6/apfel_rot.PNG')
+avocadoImg = pygame.image.load('images/6x6/avocado.PNG')
+birneImg = pygame.image.load('images/6x6/birne.PNG')
+brokkoliImg = pygame.image.load('images/6x6/brokkoli.PNG')
+kokosnuss = pygame.image.load('images/6x6/kokosnuss.PNG')
+pfirsichImg = pygame.image.load('images/6x6/pfirsich.PNG')
+pomeloImg = pygame.image.load('images/6x6/pomelo.PNG')
+tomateImg = pygame.image.load('images/6x6/tomate.PNG')
+zitroneImg = pygame.image.load('images/6x6/zitrone.PNG')
+
+fruits5x5 =[apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg, weintraubeImg, weintraubeImg,
+             kirscheImg, kirscheImg, kiwiImg, kiwiImg, orangeImg, orangeImg, wassermeloneImg, wassermeloneImg,
+             ananasImg, ananasImg, apfel_rotImg, apfel_rotImg, avocadoImg, avocadoImg, birneImg, birneImg,
+             brokkoliImg, brokkoliImg, kokosnuss, kokosnuss, pfirsichImg, pfirsichImg, pomeloImg, pomeloImg]
+
+fruits6x6 = [apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg, weintraubeImg, weintraubeImg,
+             kirscheImg, kirscheImg, kiwiImg, kiwiImg, orangeImg, orangeImg, wassermeloneImg, wassermeloneImg,
+             ananasImg, ananasImg, apfel_rotImg, apfel_rotImg, avocadoImg, avocadoImg, birneImg, birneImg,
+             brokkoliImg, brokkoliImg, kokosnuss, kokosnuss, pfirsichImg, pfirsichImg, pomeloImg, pomeloImg,
+             tomateImg, tomateImg, zitroneImg, zitroneImg]
+
+
+
 # Positions
 pos0 = (120, 100)
 pos1 = (280, 100)
