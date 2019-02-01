@@ -11,7 +11,7 @@ import time
 # https://github.com/ppizarror/pygame-menu
 
 
-
+grey = (190, 190, 190)
 black = (0, 0, 0)
 white = (255, 255, 255)
 orange = (255, 165, 0)
@@ -52,9 +52,15 @@ def draw_rectangle(i):
     pygame.draw.rect(screen, lightblue, rectangles[i])
 
 
-def draw_all_rectangles():
+def draw_rectangles_random():
     for i in range(16):
         draw_rectangle(i)
+
+
+def move_rectangles_random():
+    for i in range(16):
+        rectangles[i].x = random_pos[i][0]
+        rectangles[i].y = random_pos[i][1]
 
 
 score_1 = 0
@@ -98,8 +104,8 @@ def open_cards():
                     player_1 = score_font.render('Player 1: ' + str(score_1), False, navy_blue)
                     chosen = 0
 
-                    if score_1 == 10:
-                        fin = fin_font.render('All fruits found!', True, white, black)
+                    if score_1 == 80:
+                        fin = fin_font.render('All fruits found!', True, white, grey)
 
         counter += 1
 
@@ -132,6 +138,25 @@ def check_cards(c1, c2):
         return False
 
 
+def restart_game():
+    global score_1
+    global chosen
+    global card_1
+    global card_2
+    global opened_card
+    global fin
+    global player_1
+    global random_pos
+
+
+    score_1 = 0
+    chosen = 0
+    card_1 = 0
+    card_2 = 0
+    opened_card = None
+    fin = fin_font.render('', False, (255, 255, 255))
+    player_1 = score_font.render('Player 1: ' + str(score_1), False, navy_blue)
+    random.shuffle(random_pos)
 
 
 
@@ -268,6 +293,17 @@ while pairs_left:
             else:
                 open_cards() #pygame timer event ?
 
+        if score_1 == 80:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_r:
+                    restart_game()
+                    draw_fruits_random()
+                    move_rectangles_random()
+
+                if event.key == pygame.K_q:
+                    pygame.quit()
+                    quit()
+
 
 
     # Main menu
@@ -276,21 +312,14 @@ while pairs_left:
     screen.fill(background_color)
 
     draw_fruits_random()
-    draw_all_rectangles()
+    draw_rectangles_random()
 
     screen.blit(headline, (screen_width/2 - 150, 0))
     screen.blit(player_1, (10, 10))
     screen.blit(fin, (0, screen_height/2 - 80))
 
 
-
-
-
-
     pygame.display.flip()
 
     clock.tick(fps)
 
-    if score_1 == 80:
-        pygame.quit()
-        quit()
