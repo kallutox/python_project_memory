@@ -8,31 +8,11 @@ import sys
 import time
 from memory_assets import *
 
-# https://github.com/ppizarror/pygame-menu
-
-
-grey = (190, 190, 190)
-black = (0, 0, 0)
-white = (255, 255, 255)
-orange = (255, 165, 0)
-lightblue = (173, 216, 230)
-navy_blue = (0, 0, 128)
-background_color = orange
-fps = 30.0
-menu_colour = (200, 200, 200)
-screen_width = 800
-screen_height = 640
-screen_size = (screen_width, screen_height)
-pygame.display.set_caption('Fruit Memory')
-clock = pygame.time.Clock()
-dt = 1 / fps
-
-# Create screen and objects
-surface = pygame.display.set_mode(screen_size)
-
+# Menue aus: https://github.com/ppizarror/pygame-menu
+# Codeaufteilung nach: https://pythonprogramming.net/adding-sounds-music-pygame/
 
 '''
-Objects - put Python classes and functions here
+Functions
 '''
 
 
@@ -58,18 +38,6 @@ def move_rectangles_random(rectangles, random_pos):
     for i in range(len(rectangles)):
         rectangles[i].x = random_pos[i][0]
         rectangles[i].y = random_pos[i][1]
-
-
-score_overall = 0
-score_1 = 0
-score_2 = 0
-score_3 = 0
-score_4 = 0
-chosen = 0
-card_1 = 0
-card_2 = 0
-opened_card = None
-player_counter = 1
 
 
 def open_cards4x4(no_of_player):
@@ -152,7 +120,7 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
-                            win = win_font.render('Player ' + who_won() +' won!', True, white, grey)
+                            win = win_font.render(who_won(), True, white, grey)
                             instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
                                                                     + ' return to Menu', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
@@ -189,7 +157,7 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
-                            win = win_font.render('Player ' + who_won() +' won!', True, white, grey)
+                            win = win_font.render(who_won(), True, white, grey)
                             instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
                                                                     + ' return to Menu', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
@@ -226,7 +194,7 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
-                            win = win_font.render('Player ' + who_won() +' won!', True, white, grey)
+                            win = win_font.render(who_won(), True, white, grey)
                             instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
                                                                     + ' return to Menu', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
@@ -237,6 +205,169 @@ def open_cards4x4(no_of_player):
             counter += 1
 
 
+def open_cards6x6(no_of_player):
+    counter = 0
+    global player_counter
+    global player_1
+    global player_2
+    global player_3
+    global player_4
+    global opened_card
+    global fin
+    global win
+    global instructions
+    global score_1
+    global score_2
+    global score_3
+    global score_4
+    global score_overall
+    global chosen
+    global card_1
+    global card_2
+
+    if no_of_player == 1:
+        for i in rectangles6x6:
+            if i.collidepoint(mouse):
+                print "card " + str(counter) + " clicked"
+                if chosen == 0:
+                    chosen += 1
+                    card_1 = counter
+                    rectangles6x6[card_1].move_ip(2000, 0)
+                    opened_card = card_1
+
+                elif chosen == 1 and opened_card != counter:
+                    chosen += 1
+                    opened_card = None
+                    card_2 = counter
+                    rectangles6x6[card_2].move_ip(2000, 0)
+
+                    print "2 cards chosen!"
+                    if check_cards(card_1, card_2) is True:
+                        print "right pick!"
+                        rectangles6x6[card_1].move_ip(0, 2000)
+                        rectangles6x6[card_2].move_ip(0, 2000)
+                        score_1 += 10
+                        score_overall += 10
+                        player_1 = score_font.render('Player 1: ' + str(score_1), False, navy_blue)
+                        chosen = 0
+
+                        if score_overall == 180:
+                            fin = fin_font.render('All fruits found!', True, white, grey)
+                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu', True, black, grey)
+
+            counter += 1
+
+    if no_of_player == 2:
+        for i in rectangles6x6:
+            if i.collidepoint(mouse):
+                print "card " + str(counter) + " clicked"
+                if chosen == 0:
+                    chosen += 1
+                    card_1 = counter
+                    rectangles6x6[card_1].move_ip(2000, 0)
+                    opened_card = card_1
+
+                elif chosen == 1 and opened_card != counter:
+                    chosen += 1
+                    opened_card = None
+                    card_2 = counter
+                    rectangles6x6[card_2].move_ip(2000, 0)
+
+                    print "2 cards chosen!"
+                    if check_cards(card_1, card_2) is True:
+                        print "right pick!"
+                        rectangles6x6[card_1].move_ip(0, 2000)
+                        rectangles6x6[card_2].move_ip(0, 2000)
+                        score_player(player_counter)
+                        score_overall += 10
+                        repaint_player(player_counter)
+                        chosen = 0
+
+                        if score_overall == 180:
+                            win = win_font.render(who_won(), True, white, grey)
+                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu', True, black, grey)
+                    elif check_cards(card_1, card_2) is False:
+                        player_counter += 1
+                        if player_counter == 3:
+                            player_counter = 1
+                        repaint_player(player_counter)
+            counter += 1
+
+    if no_of_player == 3:
+        for i in rectangles6x6:
+            if i.collidepoint(mouse):
+                print "card " + str(counter) + " clicked"
+                if chosen == 0:
+                    chosen += 1
+                    card_1 = counter
+                    rectangles6x6[card_1].move_ip(2000, 0)
+                    opened_card = card_1
+
+                elif chosen == 1 and opened_card != counter:
+                    chosen += 1
+                    opened_card = None
+                    card_2 = counter
+                    rectangles6x6[card_2].move_ip(2000, 0)
+
+                    print "2 cards chosen!"
+                    if check_cards(card_1, card_2) is True:
+                        print "right pick!"
+                        rectangles6x6[card_1].move_ip(0, 2000)
+                        rectangles6x6[card_2].move_ip(0, 2000)
+                        score_player(player_counter)
+                        score_overall += 10
+                        repaint_player(player_counter)
+                        chosen = 0
+
+                        if score_overall == 180:
+                            win = win_font.render(who_won(), True, white, grey)
+                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu', True, black, grey)
+                    elif check_cards(card_1, card_2) is False:
+                        player_counter += 1
+                        if player_counter == 4:
+                            player_counter = 1
+                        repaint_player(player_counter)
+            counter += 1
+
+    if no_of_player == 4:
+        for i in rectangles6x6:
+            if i.collidepoint(mouse):
+                print "card " + str(counter) + " clicked"
+                if chosen == 0:
+                    chosen += 1
+                    card_1 = counter
+                    rectangles6x6[card_1].move_ip(2000, 0)
+                    opened_card = card_1
+
+                elif chosen == 1 and opened_card != counter:
+                    chosen += 1
+                    opened_card = None
+                    card_2 = counter
+                    rectangles6x6[card_2].move_ip(2000, 0)
+
+                    print "2 cards chosen!"
+                    if check_cards(card_1, card_2) is True:
+                        print "right pick!"
+                        rectangles6x6[card_1].move_ip(0, 2000)
+                        rectangles6x6[card_2].move_ip(0, 2000)
+                        score_player(player_counter)
+                        score_overall += 10
+                        repaint_player(player_counter)
+                        chosen = 0
+
+                        if score_overall == 180:
+                            win = win_font.render(who_won(), True, white, grey)
+                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu', True, black, grey)
+                    elif check_cards(card_1, card_2) is False:
+                        player_counter += 1
+                        if player_counter == 5:
+                            player_counter = 1
+                        repaint_player(player_counter)
+            counter += 1
 
 
 def who_won():
@@ -244,17 +375,17 @@ def who_won():
     global score_2
     global score_3
     global score_4
-    scores = [score_1, score_2, score_3, score_4]
 
     if score_1 > score_2 and score_1 > score_3 and score_1 > score_4:
-        return '1'
+        return 'Player 1 won!'
     elif score_2 > score_1 and score_2 > score_3 and score_2 > score_4:
-        return '2'
+        return 'Player 2 won!'
     elif score_3 > score_1 and score_3 > score_2 and score_3 > score_4:
-        return '2'
+        return 'Player 3 won!'
     elif score_4 > score_1 and score_4 > score_2 and score_4 > score_3:
-        return '2'
-
+        return 'Player 4 won!'
+    else:
+        return 'No one won!'
 
 
 def score_player(player):
@@ -305,11 +436,18 @@ def repaint_player(player):
         player_4 = score_font.render('Player 4: ' + str(score_4), False, navy_blue)
 
 
-def close_cards():
+def close_cards4x4():
     global card_1
     global card_2
     rectangles4x4[card_1].move_ip(-70, 0)
     rectangles4x4[card_2].move_ip(-70, 0)
+
+
+def close_cards6x6():
+    global card_1
+    global card_2
+    rectangles6x6[card_1].move_ip(-2000, 0)
+    rectangles6x6[card_2].move_ip(-2000, 0)
 
 
 def check_cards(c1, c2):
@@ -329,11 +467,31 @@ def check_cards(c1, c2):
         return True
     elif c1 == 14 and c2 == 15 or c1 == 15 and c2 == 14:
         return True
+    elif c1 == 16 and c2 == 17 or c1 == 17 and c2 == 16:
+        return True
+    elif c1 == 18 and c2 == 19 or c1 == 19 and c2 == 18:
+        return True
+    elif c1 == 20 and c2 == 21 or c1 == 21 and c2 == 20:
+        return True
+    elif c1 == 22 and c2 == 23 or c1 == 23 and c2 == 22:
+        return True
+    elif c1 == 24 and c2 == 25 or c1 == 25 and c2 == 24:
+        return True
+    elif c1 == 26 and c2 == 27 or c1 == 27 and c2 == 26:
+        return True
+    elif c1 == 28 and c2 == 29 or c1 == 29 and c2 == 28:
+        return True
+    elif c1 == 30 and c2 == 31 or c1 == 31 and c2 == 30:
+        return True
+    elif c1 == 32 and c2 == 33 or c1 == 33 and c2 == 32:
+        return True
+    elif c1 == 34 and c2 == 35 or c1 == 35 and c2 == 34:
+        return True
     else:
         return False
 
 
-def restart_game4x4():
+def restart_game(random_positions):
 
     global score_1
     global score_2
@@ -366,29 +524,54 @@ def restart_game4x4():
     win = fin_font.render('', False, (255, 255, 255))
     instructions = instructions_font.render('', False, (255, 255, 255))
     repaint_player(1)
-    random.shuffle(random_pos4x4)
-
-
+    random.shuffle(random_positions)
 
 
 
 '''
 Setup - put run-once  code here
 '''
+
+# colors
+grey = (190, 190, 190)
+black = (0, 0, 0)
+white = (255, 255, 255)
+orange = (255, 165, 0)
+lightblue = (173, 216, 230)
+navy_blue = (0, 0, 128)
+background_color = orange
+menu_colour = (200, 200, 200)
+
+
+# game properties
 screen_width = 800
 screen_height = 640
 
-fps = 30
+fps = 30.0
 
 screen = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption("Fruit Memory!")
 
-
 mouse_x = 0
 mouse_y = 0
 
+pygame.display.set_caption('Fruit Memory')
+clock = pygame.time.Clock()
+dt = 1 / fps
 
-# Game Title and Menu
+score_overall = 0
+score_1 = 0
+score_2 = 0
+score_3 = 0
+score_4 = 0
+chosen = 0
+card_1 = 0
+card_2 = 0
+opened_card = None
+player_counter = 1
+
+
+# Texts
 # how to display text aus: https://sivasantosh.wordpress.com/2012/07/18/displaying-text-in-pygame/
 pygame.font.init()
 title = 'Fruit Memory!'
@@ -407,32 +590,17 @@ fin = fin_font.render('', False, (255, 255, 255))
 win_font = pygame.font.SysFont('Calibri', 100, bold=True, italic=False)
 win = win_font.render('', False, (255, 255, 255))
 
-
 instructions_font = pygame.font.SysFont('Calibri', 30, bold=True, italic=False)
 instructions = instructions_font.render('', False, (255, 255, 255))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 '''
-Main loop - put game loop here
+Main loop(s)
 '''
 
 
 def memory4x4(number_of_players):
     global chosen
-    global score_1
-    global player_1
     global headline
     global fin
     global instructions
@@ -456,15 +624,15 @@ def memory4x4(number_of_players):
                 mouse_x, mouse_y = pygame.mouse.get_pos()
                 mouse = (mouse_x, mouse_y)
                 if chosen == 2:
-                    close_cards()
+                    close_cards4x4()
                     chosen = 0
                 else:
-                    open_cards4x4(number_of_players) #pygame timer event ?
+                    open_cards4x4(number_of_players)
 
             if score_overall == 80:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_r:
-                        restart_game4x4()
+                        restart_game(random_pos4x4)
                         draw_fruits_random(fruits4x4, random_pos4x4)
                         move_rectangles_random(rectangles4x4, random_pos4x4)
 
@@ -490,10 +658,9 @@ def memory4x4(number_of_players):
 
         clock.tick(fps)
 
-def memory6x6():
+
+def memory6x6(number_of_players):
     global chosen
-    global score_1
-    global player_1
     global headline
     global fin
     global instructions
@@ -512,14 +679,49 @@ def memory6x6():
                 pygame.quit()
                 quit()
 
+        # Application events
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_x, mouse_y = pygame.mouse.get_pos()
+                mouse = (mouse_x, mouse_y)
+                if chosen == 2:
+                    close_cards6x6()
+                    chosen = 0
+                else:
+                    open_cards6x6(number_of_players)
+
+            if score_overall == 180:
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_r:
+                        restart_game(random_pos6x6)
+                        draw_fruits_random(fruits6x6, random_pos6x6)
+                        move_rectangles_random(rectangles6x6, random_pos6x6)
+
+                    if event.key == pygame.K_q:
+                        pygame.quit()
+                        quit()
+
         screen.fill(background_color)
 
+        draw_fruits_random(fruits6x6, random_pos6x6)
         draw_rectangles_random(rectangles6x6)
+
+        screen.blit(headline, (screen_width/2 - 150, 0))
+        screen.blit(player_1, (10, 10))
+        screen.blit(player_2, (10, 50))
+        screen.blit(player_3, (640, 10))
+        screen.blit(player_4, (640, 50))
+        screen.blit(fin, (0, 200))
+        screen.blit(win, (50, 100))
+        screen.blit(instructions, (10, 400))
 
         pygame.display.flip()
 
         clock.tick(fps)
 
 
-memory4x4(4)
-#memory6x6()
+
+'''
+Which memory do you want to play?
+'''
+#memory4x4(4)
+memory6x6(3)

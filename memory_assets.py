@@ -14,26 +14,20 @@ kiwiImg = pygame.image.load('images/kiwi.png')
 orangeImg = pygame.image.load('images/orange.png')
 wassermeloneImg = pygame.image.load('images/wassermelone.png')
 
-ananasImg = pygame.image.load('images/6x6/ananas.PNG')
-apfel_rotImg = pygame.image.load('images/6x6/apfel_rot.PNG')
-avocadoImg = pygame.image.load('images/6x6/avocado.PNG')
-birneImg = pygame.image.load('images/6x6/birne.PNG')
-brokkoliImg = pygame.image.load('images/6x6/brokkoli.PNG')
-kokosnuss = pygame.image.load('images/6x6/kokosnuss.PNG')
-pfirsichImg = pygame.image.load('images/6x6/pfirsich.PNG')
-pomeloImg = pygame.image.load('images/6x6/pomelo.PNG')
-
-tomateImg = pygame.image.load('images/6x6/tomate.PNG')
-zitroneImg = pygame.image.load('images/6x6/zitrone.PNG')
+ananasImg = pygame.image.load('images/6x6/ananas.png')
+apfel_rotImg = pygame.image.load('images/6x6/apfel_rot.png')
+avocadoImg = pygame.image.load('images/6x6/avocado.png')
+birneImg = pygame.image.load('images/6x6/birne.png')
+brokkoliImg = pygame.image.load('images/6x6/brokkoli.png')
+kokosnuss = pygame.image.load('images/6x6/kokosnuss.png')
+pfirsichImg = pygame.image.load('images/6x6/pfirsich.png')
+pomeloImg = pygame.image.load('images/6x6/pomelo.png')
+tomateImg = pygame.image.load('images/6x6/tomate.png')
+zitroneImg = pygame.image.load('images/6x6/zitrone.png')
 
 
 fruits4x4 = [apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg, weintraubeImg, weintraubeImg,
              kirscheImg, kirscheImg, kiwiImg, kiwiImg, orangeImg, orangeImg, wassermeloneImg, wassermeloneImg]
-
-fruits4x6 =[apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg, weintraubeImg, weintraubeImg,
-            kirscheImg, kirscheImg, kiwiImg, kiwiImg, orangeImg, orangeImg, wassermeloneImg, wassermeloneImg,
-            ananasImg, ananasImg, apfel_rotImg, apfel_rotImg, avocadoImg, avocadoImg, birneImg, birneImg]
-
 
 fruits6x6 = [apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg, weintraubeImg, weintraubeImg,
              kirscheImg, kirscheImg, kiwiImg, kiwiImg, orangeImg, orangeImg, wassermeloneImg, wassermeloneImg,
@@ -76,10 +70,6 @@ pos4x4 = [pos4x4_0, pos4x4_1, pos4x4_2, pos4x4_3, pos4x4_4, pos4x4_5, pos4x4_6, 
 
 random_pos4x4 = list(pos4x4)
 random.shuffle(random_pos4x4)
-
-
-
-
 
 
 # Positions 6x6
