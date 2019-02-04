@@ -11,95 +11,48 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$Tutorial1.coverage" NAME="Tutorial1 Coverage Results" MODIFIED="1547492784854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_project_memory$memory_tutorial.coverage" NAME="memory_2 Coverage Results" MODIFIED="1548768672722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_project_memory$memory.coverage" NAME="memory Coverage Results" MODIFIED="1548788682538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_project_memory$memory.coverage" NAME="memory Coverage Results" MODIFIED="1549192149442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$snake2.coverage" NAME="snake2 Coverage Results" MODIFIED="1547489938227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_project_memory$memory_2.coverage" NAME="memory_2 Coverage Results" MODIFIED="1548774239346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$youtube.coverage" NAME="youtube Coverage Results" MODIFIED="1548009406885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$Tutorial2.coverage" NAME="Tutorial2 Coverage Results" MODIFIED="1547490888007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$RacingCar_Tutorial.coverage" NAME="RacingCar_Tutorial Coverage Results" MODIFIED="1547496697027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$Snake.coverage" NAME="Snake Coverage Results" MODIFIED="1547496702463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$Tutorial1.coverage" NAME="Tutorial1 Coverage Results" MODIFIED="1547492784854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$snake2.coverage" NAME="snake2 Coverage Results" MODIFIED="1547489938227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-861644660">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="3722" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Python" value="3722" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Python" value="3" />
-        </counts>
-      </usages-collector>
-    </session>
-=======
     <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$memory.coverage" NAME="memory Coverage Results" MODIFIED="1548609111224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
->>>>>>> 3a4cbd53a6a1cac5a37bc9704403de80709ae536
-=======
-    <SUITE FILE_PATH="coverage/Python_Projekt_WS1819$memory.coverage" NAME="memory Coverage Results" MODIFIED="1548609111224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
->>>>>>> 3a4cbd53a6a1cac5a37bc9704403de80709ae536
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/memory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="79" column="49" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+            <state relative-caret-position="539">
+              <caret line="726" lean-forward="true" selection-start-line="726" selection-end-line="726" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#763#793#0" />
+                <element signature="e#844#918#0" />
+                <element signature="e#961#1011#0" />
+                <element signature="e#1058#1129#0" />
+                <element signature="e#1188#1306#0" />
+                <element signature="e#1485#8409#0" />
+                <element signature="e#8385#15246#0" />
+                <element signature="e#8370#8930#0" />
+                <element signature="e#8951#9194#0" />
+                <element signature="e#9229#10676#0" />
+                <element signature="e#10702#10817#0" />
+                <element signature="e#17834#17949#0" />
+                <element signature="e#10849#11469#0" />
+                <element signature="e#11500#12199#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memory_tutorial.py">
+        <entry file="file://$PROJECT_DIR$/memory_assets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2279">
-              <caret line="291" column="10" selection-start-line="291" selection-start-column="10" selection-end-line="291" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/menu_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-810">
-              <caret line="155" column="65" lean-forward="true" selection-start-line="155" selection-start-column="65" selection-end-line="155" selection-end-column="65" />
-              <folding>
-                <element signature="e#1192#1219#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memory_2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3083">
-              <caret line="298" column="25" lean-forward="true" selection-start-line="298" selection-start-column="25" selection-end-line="298" selection-end-column="25" />
+            <state relative-caret-position="-2094">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -118,15 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scree</find>
-      <find>cube</find>
-      <find>play</find>
-      <find>black</find>
-      <find>pygame.init</find>
-      <find>backdrop</find>
-      <find>BLACK</find>
-      <find>hero</find>
-      <find>cras</find>
       <find>rac</find>
       <find>255</find>
       <find>init</find>
@@ -136,11 +80,27 @@
       <find>random</find>
       <find>super</find>
       <find>pygame.dis</find>
-      <find>fruits</find>
       <find>play_function</find>
       <find>mainloop</find>
       <find>jpg</find>
       <find>fps</find>
+      <find>chosen</find>
+      <find>close_</find>
+      <find>title</find>
+      <find>font</find>
+      <find>score</find>
+      <find>score_1</find>
+      <find>draw_all_re</find>
+      <find>fruits</find>
+      <find>draw_fruit</find>
+      <find>draw_rectangle</find>
+      <find>score_font</find>
+      <find>open_cards</find>
+      <find>restart_game4x4</find>
+      <find>restart_game</find>
+      <find>close_cards</find>
+      <find>pygame</find>
+      <find>surface</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,21 +122,21 @@
         <option value="$USER_HOME$/Downloads/15-super.py" />
         <option value="$PROJECT_DIR$/menu_test.py" />
         <option value="$PROJECT_DIR$/memory_2.py" />
+        <option value="$PROJECT_DIR$/memory_assets.py" />
         <option value="$PROJECT_DIR$/memory.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="width" value="982" />
-    <option name="height" value="1042" />
+    <option name="x" value="-15" />
+    <option name="width" value="985" />
+    <option name="height" value="1045" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,11 +148,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/memory_2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -368,21 +329,27 @@
       <workItem from="1548595572448" duration="563000" />
       <workItem from="1548596293228" duration="10510000" />
       <workItem from="1548773243125" duration="15381000" />
+      <workItem from="1548871939858" duration="651000" />
+      <workItem from="1548947919115" duration="3389000" />
+      <workItem from="1549012574046" duration="19000" />
+      <workItem from="1549012633288" duration="11622000" />
+      <workItem from="1549113779961" duration="14356000" />
+      <workItem from="1549188228172" duration="3754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50335000" />
+    <option name="totallyTimeSpent" value="84126000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14630872" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15838926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28895184" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35835695" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -406,71 +373,65 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/snake2.py" />
     <entry file="file://$PROJECT_DIR$/Projekt.py" />
-    <entry file="file://$PROJECT_DIR$/snake.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorial2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="103" column="22" lean-forward="true" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/snake.py" />
+    <entry file="file://$PROJECT_DIR$/Tutorial2.py" />
     <entry file="file://$PROJECT_DIR$/youtube.py" />
     <entry file="file://$USER_HOME$/Desktop/Uni/5. Semester/Python/Studienleistung/aufgabe3/ziegen.py" />
-    <entry file="file://$PROJECT_DIR$/RacingCar_Tutorial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tutorial1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="76" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RacingCar_Tutorial.py" />
+    <entry file="file://$PROJECT_DIR$/Tutorial1.py" />
     <entry file="file://$USER_HOME$/Downloads/15-super.py" />
     <entry file="file://C:/Python27/Lib/site-packages/pygameMenu/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/memory_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3083">
-          <caret line="298" column="25" lean-forward="true" selection-start-line="298" selection-start-column="25" selection-end-line="298" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/memory_tutorial.py" />
     <entry file="file://$PROJECT_DIR$/menu_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="155" column="65" lean-forward="true" selection-start-line="155" selection-start-column="65" selection-end-line="155" selection-end-column="65" />
+        <state relative-caret-position="2516">
+          <caret line="155" column="65" selection-start-line="155" selection-start-column="65" selection-end-line="155" selection-end-column="65" />
           <folding>
             <element signature="e#1192#1219#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memory_tutorial.py">
+    <entry file="file://$PROJECT_DIR$/memory_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2279">
-          <caret line="291" column="10" selection-start-line="291" selection-start-column="10" selection-end-line="291" selection-end-column="10" />
+        <state relative-caret-position="102">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memory_assets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2094">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/memory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="79" column="49" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+        <state relative-caret-position="539">
+          <caret line="726" lean-forward="true" selection-start-line="726" selection-end-line="726" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#763#793#0" />
+            <element signature="e#844#918#0" />
+            <element signature="e#961#1011#0" />
+            <element signature="e#1058#1129#0" />
+            <element signature="e#1188#1306#0" />
+            <element signature="e#1485#8409#0" />
+            <element signature="e#8385#15246#0" />
+            <element signature="e#8370#8930#0" />
+            <element signature="e#8951#9194#0" />
+            <element signature="e#9229#10676#0" />
+            <element signature="e#10702#10817#0" />
+            <element signature="e#17834#17949#0" />
+            <element signature="e#10849#11469#0" />
+            <element signature="e#11500#12199#0" />
           </folding>
         </state>
       </provider>
