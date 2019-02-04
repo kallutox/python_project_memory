@@ -202,7 +202,7 @@ main_menu.add_option('Number of Players', player_menu, pygame.font.Font(pygameMe
 main_menu.add_option('Size of Field', size_menu, pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
 main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
 
-
+'''
 # Images ---> gameDisplay.blit(Img, (x,y))
 apfelImg = pygame.image.load('images/apfel.jpg')
 bananeImg = pygame.image.load('images/banane.jpg')
@@ -225,7 +225,7 @@ def draw_fruit(i, (x, y)):
 def draw_fruits_random():
     for i in range(16):
         draw_fruit(i, random_pos[i])
-
+'''
 
 # Positions
 pos = []
