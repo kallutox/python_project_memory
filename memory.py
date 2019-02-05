@@ -7,14 +7,14 @@ import os
 import sys
 import time
 from memory_assets import *
+from memory_menu_2 import *
 
-# Menue aus: https://github.com/ppizarror/pygame-menu
+
 # Codeaufteilung nach: https://pythonprogramming.net/adding-sounds-music-pygame/
 
 '''
 Functions
 '''
-
 
 def draw_fruits(fruits, i, (x, y)):
     screen.blit(fruits[i], (x, y))
@@ -526,6 +526,8 @@ def restart_game(random_positions):
     repaint_player(1)
     random.shuffle(random_positions)
 
+def main_background():
+    surface.fill(orange)
 
 
 '''
@@ -540,17 +542,21 @@ orange = (255, 165, 0)
 lightblue = (173, 216, 230)
 navy_blue = (0, 0, 128)
 background_color = orange
-menu_colour = (200, 200, 200)
+menu_background = (190, 190, 190)
 
 
 # game properties
 screen_width = 800
 screen_height = 640
+screen_size = (screen_width, screen_height)
 
 fps = 30.0
 
 screen = pygame.display.set_mode([screen_width, screen_height])
-pygame.display.set_caption("Fruit Memory!")
+surface = pygame.display.set_mode(screen_size)
+
+player_num = 0
+game_size = ''
 
 mouse_x = 0
 mouse_y = 0
@@ -724,4 +730,4 @@ def memory6x6(number_of_players):
 Which memory do you want to play?
 '''
 #memory4x4(4)
-memory6x6(3)
+#memory6x6(3)
