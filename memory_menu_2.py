@@ -31,23 +31,18 @@ clock = pygame.time.Clock()
 dt = 1 / fps
 
 
-'''
-game_size = '4x4'
-player_num = 2
-'''
-
 PLAYERS = [1]
 FIELD = ['4x4']
 
 
 # functions
 def change_player_num(n):
-    print ('Selected number: {0}'.format(n))
+    print ('Selected number of players: {0}'.format(n))
     PLAYERS[0] = n
 
 
 def change_field_size(f):
-    print ('Selected size: {0}'.format(f))
+    print ('Selected size of field: {0}'.format(f))
     FIELD[0] = f
 
 
@@ -64,13 +59,13 @@ def game_function(players, field):
     assert isinstance(field, str)
 
     if field == '4x4':
-        if players == 1 or players == 2 or players == 3 or players == 4:
+        if 1 <= players <= 4:
             memory4x4(players)
         else:
             raise Exception('Unknown number of players {0}.'.format(players))
 
     elif field == '6x6':
-        if players == 1 or players == 2 or players == 3 or players == 4:
+        if 1 <= players <= 4:
             memory6x6(players)
         else:
             raise Exception('Unknown number of players {0}.'.format(players))
