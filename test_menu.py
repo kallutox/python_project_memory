@@ -85,6 +85,7 @@ def play_function(difficulty, font):
     :param font: Pygame font
     :return: None
     """
+
     difficulty = difficulty[0]
     assert isinstance(difficulty, str)
 
@@ -107,6 +108,7 @@ def play_function(difficulty, font):
     main_menu.disable()
     main_menu.reset(1)
 
+    
     while True:
 
         # Clock tick
@@ -163,6 +165,8 @@ play_menu = pygameMenu.Menu(surface,
 # When pressing return -> play(DIFFICULTY[0], font)
 play_menu.add_option('Start', play_function, DIFFICULTY,
                      pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
+
+
 play_menu.add_selector('Select difficulty', [('Easy', 'EASY'),
                                              ('Medium', 'MEDIUM'),
                                              ('Hard', 'HARD')],

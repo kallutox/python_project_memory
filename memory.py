@@ -7,7 +7,6 @@ import os
 import sys
 import time
 from memory_assets import *
-from memory_menu_2 import *
 
 
 # Codeaufteilung nach: https://pythonprogramming.net/adding-sounds-music-pygame/
