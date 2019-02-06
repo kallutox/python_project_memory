@@ -8,12 +8,15 @@ from memory import *
 # menu from https://github.com/ppizarror/pygame-menu
 # inspired by example menu: https://github.com/ppizarror/pygame-menu/blob/master/example2.py
 
-orange = (255, 165, 0)
+
+# ----- variables
+
+# constants
+orange = (255, 190, 50)
 black = (0, 0, 0)
 white = (255, 255, 255)
-lightblue = (173, 216, 230)
 fps = 30.0
-menu_background = (190, 190, 190)
+menu_background = grey
 screen_width = 800
 screen_height = 640
 screen_size = (screen_width, screen_height)
@@ -23,24 +26,27 @@ clock = pygame.time.Clock()
 pygame.init()
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 
-# create screen and objects
+# screen and objects
 surface = pygame.display.set_mode(screen_size)
 screen = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption('Fruit Memory')
 clock = pygame.time.Clock()
 dt = 1 / fps
 
-
+# sets player number and field to initial values
 PLAYERS = [1]
 FIELD = ['4x4']
 
 
-# functions
+# ----- functions
+
+# prints the selected number of players
 def change_player_num(n):
     print ('Selected number of players: {0}'.format(n))
     PLAYERS[0] = n
 
 
+# prints the selected size of field
 def change_field_size(f):
     print ('Selected size of field: {0}'.format(f))
     FIELD[0] = f
@@ -50,6 +56,7 @@ def main_background():
     surface.fill(orange)
 
 
+# sets game according to chosen parameters
 def game_function(players, field):
 
     players = players[0]
@@ -75,6 +82,9 @@ def game_function(players, field):
     main_menu.disable()
     main_menu.reset(1)
 
+
+# ----- menu
+
 # menu for choosing number of players and field size
 main_menu = pygameMenu.Menu(surface,
                             bgfun=main_background,
@@ -93,7 +103,10 @@ main_menu = pygameMenu.Menu(surface,
                             window_width=screen_width
                             )
 
+# start game of memory with chosen players and field size
 main_menu.add_option('Start', game_function, PLAYERS, FIELD)
+
+# select number of players from 1 to 4
 main_menu.add_selector('Select Number', [('1 Player', 1),
                                          ('2 Players', 2),
                                          ('3 Players', 3),
@@ -101,29 +114,29 @@ main_menu.add_selector('Select Number', [('1 Player', 1),
                        onreturn=None,
                        onchange=change_player_num)
 
+# select size of playing field, either 4x4 or 6x6
 main_menu.add_selector('Select Size', [('4x4', '4x4'),
                                        ('6x6', '6x6')],
                        onreturn=None,
                        onchange=change_field_size)
 
+# closes game window
 main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
 
 
-# Main loop
+# ----- main loop
+
 while True:
 
-    # Tick
     clock.tick(30)
 
-    # Application events
     events = pygame.event.get()
     for event in events:
         if event.type == QUIT:
             exit()
 
-    # Main menu
+    # menu of game
     main_menu.mainloop(events)
 
-    # Flip surface
     pygame.display.flip()
 
