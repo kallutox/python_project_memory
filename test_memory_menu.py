@@ -1,39 +1,16 @@
-#coding=utf-8
-"""
-EXAMPLE 2
-Game menu with 3 difficulty options.
-The MIT License (MIT)
-Copyright 2017-2019 Pablo Pizarro R. @ppizarror
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the "Software"),
-to deal in the Software without restriction, including without limitation
-the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the Software
-is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-"""
+# coding=utf-8
 
 # Import pygame and libraries
 from pygame.locals import *
 from random import randrange
 import os
 import pygame
+from memory import *
 
 # Import pygameMenu
 import pygameMenu
 from pygameMenu.locals import *
 
-ABOUT = ['PygameMenu {0}'.format(pygameMenu.__version__),
-         'Author: {0}'.format(pygameMenu.__author__),
-         PYGAMEMENU_TEXT_NEWLINE,
-         'Email: {0}'.format(pygameMenu.__email__)]
 COLOR_BACKGROUND = (128, 0, 128)
 COLOR_BLACK = (0, 0, 0)
 COLOR_WHITE = (255, 255, 255)
@@ -41,7 +18,7 @@ FPS = 60.0
 MENU_BACKGROUND_COLOR = (228, 55, 36)
 WINDOW_SIZE = (640, 480)
 
-# -----------------------------------------------------------------------------
+####################################################################
 # Init pygame
 pygame.init()
 os.environ['SDL_VIDEO_CENTERED'] = '1'
@@ -54,9 +31,32 @@ dt = 1 / FPS
 
 # Global variables
 DIFFICULTY = ['EASY']
+####################################################################
+
+orange = (255, 165, 0)
+black = (0, 0, 0)
+white = (255, 255, 255)
+lightblue = (173, 216, 230)
+fps = 30.0
+menu_background = (190, 190, 190)
+screen_width = 800
+screen_height = 640
+screen_size = (screen_width, screen_height)
+clock = pygame.time.Clock()
+
+# init pygame
+pygame.init()
+os.environ['SDL_VIDEO_CENTERED'] = '1'
+
+# create screen and objects
+surface = pygame.display.set_mode(screen_size)
+screen = pygame.display.set_mode([screen_width, screen_height])
+pygame.display.set_caption('Fruit Memory')
+clock = pygame.time.Clock()
+dt = 1 / fps
 
 
-# -----------------------------------------------------------------------------
+################################################################################
 
 def change_difficulty(d):
     """
@@ -67,7 +67,6 @@ def change_difficulty(d):
 
     print ('Selected difficulty: {0}'.format(d))
     DIFFICULTY[0] = d
-
 
 
 def random_color():
@@ -110,7 +109,6 @@ def play_function(difficulty, font):
     main_menu.disable()
     main_menu.reset(1)
 
-    
     while True:
 
         # Clock tick
@@ -144,6 +142,76 @@ def main_background():
     :return: None
     """
     surface.fill(COLOR_BACKGROUND)
+################################################################################
+
+PLAYERS = ['2 Players']
+FIELD = ['4x4']
+
+
+def change_player_num(n):
+    print ('Selected number: {0}'.format(n))
+    PLAYERS[0] = n
+
+
+def change_field_size(f):
+    print ('Selected size: {0}'.format(f))
+    FIELD[0] = f
+
+
+def main_background():
+    surface.fill(orange)
+
+
+def game_function(players, field):
+    players = players[0]
+    field = field[0]
+
+    assert isinstance(players, int)
+    assert isinstance(field, str)
+
+    if field == '4x4':
+        if players == [1, 4]:
+            memory4x4(players)
+        else:
+            raise Exception('Unknown number of players {0}.'.format(players))
+
+    elif field == '6x6':
+        if players == [1, 4]:
+            memory6x6(players)
+        else:
+            raise Exception('Unknown number of players {0}.'.format(players))
+    else:
+        raise Exception('Unknown field size {0}.'.format(field))
+
+    main_menu.disable()
+    main_menu.reset(1)
+
+    '''
+    while True:
+
+        # Clock tick
+        clock.tick(60)
+
+        # Application events
+        playevents = pygame.event.get()
+        for e in playevents:
+            if e.type == QUIT:
+                exit()
+            elif e.type == KEYDOWN:
+                if e.key == K_ESCAPE and main_menu.is_disabled():
+                    main_menu.enable()
+
+                    # Quit this function, then skip to loop of main-menu on line 217
+                    return
+
+        # Pass events to main_menu
+        main_menu.mainloop(playevents)
+
+        # Continue playing
+        surface.fill(bg_color)
+        surface.blit(f, ((WINDOW_SIZE[0] - f_width) / 2, WINDOW_SIZE[1] / 2))
+        pygame.display.flip()
+        '''
 
 
 # -----------------------------------------------------------------------------
@@ -165,8 +233,7 @@ play_menu = pygameMenu.Menu(surface,
                             window_width=WINDOW_SIZE[0]
                             )
 # When pressing return -> play(DIFFICULTY[0], font)
-play_menu.add_option('Start', play_function, DIFFICULTY, pygame.font.Font(pygameMenu.fonts.FONT_FRANCHISE, 30))
-
+play_menu.add_option('Start', game_function, PLAYERS, FIELD)
 
 play_menu.add_selector('Select difficulty', [('Easy', 'EASY'),
                                              ('Medium', 'MEDIUM'),
@@ -195,10 +262,7 @@ about_menu = pygameMenu.TextMenu(surface,
                                  window_height=WINDOW_SIZE[1],
                                  window_width=WINDOW_SIZE[0]
                                  )
-for m in ABOUT:
-    about_menu.add_line(m)
-about_menu.add_line(PYGAMEMENU_TEXT_NEWLINE)
-about_menu.add_option('Return to menu', PYGAME_MENU_BACK)
+
 
 # MAIN MENU
 main_menu = pygameMenu.Menu(surface,
