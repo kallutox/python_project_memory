@@ -36,12 +36,9 @@ fruits6x6 = [apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg,
              tomateImg, tomateImg, zitroneImg, zitroneImg]
 
 
-
-
 '''
 Positions 
 '''
-
 
 # Positions 4x4
 

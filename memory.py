@@ -16,10 +16,10 @@ from memory_assets import *
 # ----- variables
 
 # colors
-grey = (190, 190, 190)
-light_grey = (230, 230, 230)
+light_grey = (220, 220, 220)
 black = (0, 0, 0)
 white = (255, 255, 255)
+grey = white
 orange = (255, 190, 50)
 
 background_color = orange
@@ -571,7 +571,7 @@ def restart_game(random_positions):
 pygame.font.init()
 title = 'FRUIT MEMORY'
 headline_font = pygame.font.SysFont(None, cfg.MENU_FONT_SIZE_TITLE)
-headline = headline_font.render(title, False, cfg.MENU_TITLE_BG_COLOR)
+headline = headline_font.render(title, True, white, cfg.MENU_TITLE_BG_COLOR)
 
 score_font = pygame.font.SysFont(font, 35, bold=False, italic=False)
 player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, black)
