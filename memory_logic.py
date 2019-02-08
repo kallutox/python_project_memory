@@ -16,10 +16,10 @@ from memory_assets import *
 # ----- variables
 
 # colors
-light_grey = (220, 220, 220)
 black = (0, 0, 0)
 white = (255, 255, 255)
-grey = white
+grey = (200, 200, 200)
+light_grey = (220, 220, 220)
 orange = (255, 190, 50)
 
 background_color = orange
@@ -119,13 +119,13 @@ def open_cards4x4(no_of_player):
                         rectangles4x4[card_2].move_ip(0, 2000)
                         score_1 += 10
                         score_overall += 10
-                        player_1 = score_font.render('Player 1: ' + str(score_1), False, black)
+                        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, black)
                         chosen = 0
 
                         if score_overall == 80:
-                            fin = fin_font.render('All fruits found!', True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            fin = fin_font.render('ALL FRUITS FOUND!', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
 
             counter += 1
 
@@ -156,9 +156,9 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
-                            win = win_font.render(who_won(), True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            win = win_font.render(who_won(), True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 3:
@@ -193,9 +193,9 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
-                            win = win_font.render(who_won(), True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            win = win_font.render(who_won(), True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 4:
@@ -230,9 +230,9 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
-                            win = win_font.render(who_won(), True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            win = win_font.render(who_won(), True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 5:
@@ -285,13 +285,13 @@ def open_cards6x6(no_of_player):
                         rectangles6x6[card_2].move_ip(0, 2000)
                         score_1 += 10
                         score_overall += 10
-                        player_1 = score_font.render('Player 1: ' + str(score_1), False, black)
+                        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, black)
                         chosen = 0
 
                         if score_overall == 180:
-                            fin = fin_font.render('All fruits found!', True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            fin = fin_font.render('ALL FRUITS FOUND!', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
 
             counter += 1
 
@@ -322,9 +322,9 @@ def open_cards6x6(no_of_player):
                         chosen = 0
 
                         if score_overall == 180:
-                            win = win_font.render(who_won(), True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            win = win_font.render(who_won(), True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 3:
@@ -359,9 +359,9 @@ def open_cards6x6(no_of_player):
                         chosen = 0
 
                         if score_overall == 180:
-                            win = win_font.render(who_won(), True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            win = win_font.render(who_won(), True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 4:
@@ -396,9 +396,9 @@ def open_cards6x6(no_of_player):
                         chosen = 0
 
                         if score_overall == 180:
-                            win = win_font.render(who_won(), True, white, grey)
-                            instructions = instructions_font.render('Press R to restart | Press Q to quit | Press M to'
-                                                                    + ' return to Menu', True, black, grey)
+                            win = win_font.render(who_won(), True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M to'
+                                                                    + ' return to Menu  ', True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 5:
@@ -455,25 +455,25 @@ def repaint_player(player):
 
     if player == 1:
         player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, black)
-        player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, grey)
-        player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, grey)
-        player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, grey)
+        player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, white)
+        player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, white)
+        player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, white)
 
     elif player == 2:
-        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, grey)
+        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, white)
         player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, black)
-        player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, grey)
-        player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, grey)
+        player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, white)
+        player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, white)
 
     elif player == 3:
-        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, grey)
-        player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, grey)
+        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, white)
+        player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, white)
         player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, black)
-        player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, grey)
+        player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, white)
     elif player == 4:
-        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, grey)
-        player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, grey)
-        player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, grey)
+        player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, white)
+        player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, white)
+        player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, white)
         player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, black)
 
 
@@ -558,9 +558,9 @@ def restart_game(random_positions):
     chosen = card_1 = card_2 = 0
 
     opened_card = None
-    fin = fin_font.render('', False, (255, 255, 255))
-    win = win_font.render('', False, (255, 255, 255))
-    instructions = instructions_font.render('', False, (255, 255, 255))
+    fin = fin_font.render('', False, white)
+    win = win_font.render('', False, white)
+    instructions = instructions_font.render('', False, white)
     repaint_player(1)
     random.shuffle(random_positions)
 
@@ -575,18 +575,18 @@ headline = headline_font.render(title, True, white, cfg.MENU_TITLE_BG_COLOR)
 
 score_font = pygame.font.SysFont(font, 35, bold=False, italic=False)
 player_1 = score_font.render('PLAYER 1: ' + str(score_1), False, black)
-player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, grey)
-player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, grey)
-player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, grey)
+player_2 = score_font.render('PLAYER 2: ' + str(score_2), False, white)
+player_3 = score_font.render('PLAYER 3: ' + str(score_3), False, white)
+player_4 = score_font.render('PLAYER 4: ' + str(score_4), False, white)
 
-fin_font = pygame.font.SysFont(font, 123)
-fin = fin_font.render('', False, (255, 255, 255))
+fin_font = pygame.font.SysFont('Calibri', 101)
+fin = fin_font.render('', False, white)
 
-win_font = pygame.font.SysFont(font, 100)
-win = win_font.render('', False, (255, 255, 255))
+win_font = pygame.font.SysFont('Calibri', 100)
+win = win_font.render('', False, white)
 
-instructions_font = pygame.font.SysFont(font, 30)
-instructions = instructions_font.render('', False, (255, 255, 255))
+instructions_font = pygame.font.SysFont('Calibri', 30)
+instructions = instructions_font.render('', False, white)
 
 
 # main loops
@@ -632,6 +632,15 @@ def memory4x4(number_of_players):
                         pygame.quit()
                         quit()
 
+                    '''
+                    if event.key == pygame.K_m:
+                        import fruit_memory
+                        fruit_memory.main_menu.enable()
+
+                        restart_game(random_pos4x4)
+                        draw_fruits_random(fruits4x4, random_pos4x4)
+                        move_rectangles_random(rectangles4x4, random_pos4x4)
+                    '''
         screen.fill(background_color)
 
         draw_fruits_random(fruits4x4, random_pos4x4)
@@ -644,7 +653,7 @@ def memory4x4(number_of_players):
         screen.blit(player_4, (640, 50))
         screen.blit(fin, (0, 200))
         screen.blit(win, (50, 100))
-        screen.blit(instructions, (10, 400))
+        screen.blit(instructions, (0, 400))
 
         pygame.display.flip()
 
@@ -692,6 +701,16 @@ def memory6x6(number_of_players):
                         pygame.quit()
                         quit()
 
+                    '''
+                    if event.key == pygame.K_m:
+                        import fruit_memory
+                        fruit_memory.main_menu.enable()
+
+                        restart_game(random_pos6x6)
+                        draw_fruits_random(fruits6x6, random_pos6x6)
+                        move_rectangles_random(rectangles6x6, random_pos6x6)
+                    '''
+                    
         screen.fill(background_color)
 
         draw_fruits_random(fruits6x6, random_pos6x6)
@@ -704,7 +723,10 @@ def memory6x6(number_of_players):
         screen.blit(player_4, (640, 50))
         screen.blit(fin, (0, 200))
         screen.blit(win, (50, 100))
-        screen.blit(instructions, (10, 400))
+        screen.blit(instructions, (0, 400))
 
         pygame.display.flip()
         clock.tick(fps)
+
+
+

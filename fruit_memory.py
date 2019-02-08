@@ -3,7 +3,7 @@ from pygame.locals import *
 import pygameMenu
 from pygameMenu.locals import *
 import os
-from memory import *
+from memory_logic import *
 
 # menu from https://github.com/ppizarror/pygame-menu
 # inspired by example menu: https://github.com/ppizarror/pygame-menu/blob/master/example2.py
@@ -16,7 +16,7 @@ orange = (255, 190, 50)
 black = (0, 0, 0)
 white = (255, 255, 255)
 fps = 30.0
-menu_background = (200, 200, 200)
+menu_background = (210, 210, 210)
 screen_width = 800
 screen_height = 640
 screen_size = (screen_width, screen_height)
@@ -126,17 +126,20 @@ main_menu.add_option('Quit Game', PYGAME_MENU_EXIT)
 
 # ----- main loop
 
-while True:
+def main_loop():
+    while True:
 
-    clock.tick(30)
+        clock.tick(30)
 
-    events = pygame.event.get()
-    for event in events:
-        if event.type == QUIT:
-            exit()
+        events = pygame.event.get()
+        for event in events:
+            if event.type == QUIT:
+                exit()
 
-    # menu of game
-    main_menu.mainloop(events)
+        # menu of game
+        main_menu.mainloop(events)
 
-    pygame.display.flip()
+        pygame.display.flip()
 
+
+main_loop()
