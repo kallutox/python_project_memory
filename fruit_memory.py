@@ -30,12 +30,15 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 surface = pygame.display.set_mode(screen_size)
 screen = pygame.display.set_mode([screen_width, screen_height])
 pygame.display.set_caption('Fruit Memory')
-clock = pygame.time.Clock()
 dt = 1 / fps
 
 # sets player number and field to initial values
 PLAYERS = [1]
 FIELD = ['4x4']
+
+# set icon of the game (https://pythonprogramming.net/changing-pygame-icon/)
+fruit_memory_icon = pygame.image.load('images/icon.png')
+pygame.display.set_icon(fruit_memory_icon)
 
 
 # ----- functions

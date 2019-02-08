@@ -37,6 +37,21 @@ fruits6x6 = [apfelImg, apfelImg, bananeImg, bananeImg, erdbeereImg, erdbeereImg,
 
 
 '''
+Sound and Music
+'''
+pygame.mixer.init()
+
+background_music = pygame.mixer.Sound('audio/background_music32kbps.mp3')
+
+coin = pygame.mixer.Sound('audio/coin.wav')
+cancel = pygame.mixer.Sound('audio/cancel.wav')
+good = pygame.mixer.Sound('audio/good.wav')
+start = pygame.mixer.Sound('audio/start.wav')
+switch = pygame.mixer.Sound('audio/switch.wav')
+wrong = pygame.mixer.Sound('audio/wrong.wav')
+
+
+'''
 Positions 
 '''
 
@@ -123,7 +138,6 @@ pos6x6 = [pos6x6_0, pos6x6_1, pos6x6_2, pos6x6_3, pos6x6_4, pos6x6_5,
 
 random_pos6x6 = list(pos6x6)
 random.shuffle(random_pos6x6)
-
 
 
 '''
