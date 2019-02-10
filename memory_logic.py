@@ -3,9 +3,6 @@ from pygame.locals import *
 import random
 import pygameMenu
 from pygameMenu.locals import *
-import os
-import sys
-import time
 import pygameMenu.config_menu as cfg
 from memory_assets import *
 
@@ -127,8 +124,8 @@ def open_cards4x4(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             fin = fin_font.render('ALL FRUITS FOUND!', True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
 
             counter += 1
 
@@ -159,8 +156,8 @@ def open_cards4x4(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 3:
@@ -195,8 +192,8 @@ def open_cards4x4(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M '
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 4:
@@ -231,8 +228,8 @@ def open_cards4x4(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 5:
@@ -289,8 +286,8 @@ def open_cards6x6(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             fin = fin_font.render('ALL FRUITS FOUND!', True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
 
             counter += 1
 
@@ -321,8 +318,8 @@ def open_cards6x6(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 3:
@@ -357,8 +354,8 @@ def open_cards6x6(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 4:
@@ -393,8 +390,8 @@ def open_cards6x6(no_of_player):
                             pygame.mixer.music.load('audio/good.wav')
                             pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
-                            instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
-                                                                    + ' to return to Menu  ', True, black, grey)
+                            instructions = instructions_font.render('   Press R to restart | Press Q to quit  ',
+                                                                    True, black, grey)
                     elif check_cards(card_1, card_2) is False:
                         player_counter += 1
                         if player_counter == 5:
@@ -481,15 +478,12 @@ def close_cards4x4():
     rectangles4x4[card_2].move_ip(-70, 0)
 
 
-
-
 # hides a pair of cards in a 6x6 game
 def close_cards6x6():
     global card_1
     global card_2
     rectangles6x6[card_1].move_ip(-2000, 0)
     rectangles6x6[card_2].move_ip(-2000, 0)
-
 
 
 # checks whether two cards are the same
@@ -626,10 +620,6 @@ instructions_font = pygame.font.SysFont('Calibri', 30)
 instructions = instructions_font.render('', False, white)
 
 
-
-
-
-
 # main loops
 def memory4x4(number_of_players):
     global chosen
@@ -676,19 +666,6 @@ def memory4x4(number_of_players):
                         pygame.quit()
                         quit()
 
-                    '''
-                    if event.key == pygame.K_m:
-                        pygame.mixer.music.load('audio/cancel.wav')
-                        pygame.mixer.music.play(0)
-                        import fruit_memory
-                        fruit_memory.main_menu.enable()
-
-                        restart_game(random_pos4x4)
-                        draw_fruits_random(fruits4x4, random_pos4x4)
-                        move_rectangles_random(rectangles4x4, random_pos4x4)
-                    '''
-
-
         screen.fill(background_color)
 
         draw_fruits_random(fruits4x4, random_pos4x4)
@@ -700,8 +677,8 @@ def memory4x4(number_of_players):
         screen.blit(player_3, (640, 10))
         screen.blit(player_4, (640, 50))
         screen.blit(fin, (0, 200))
-        screen.blit(win, (50, 100))
-        screen.blit(instructions, (0, 400))
+        screen.blit(win, (124, 200))
+        screen.blit(instructions, (180, 400))
 
         pygame.display.flip()
 
@@ -751,16 +728,6 @@ def memory6x6(number_of_players):
                         pygame.quit()
                         quit()
 
-                    '''
-                    if event.key == pygame.K_m:
-                        import fruit_memory
-                        fruit_memory.main_menu.enable()
-
-                        restart_game(random_pos6x6)
-                        draw_fruits_random(fruits6x6, random_pos6x6)
-                        move_rectangles_random(rectangles6x6, random_pos6x6)
-                    '''
-                    
         screen.fill(background_color)
 
         draw_fruits_random(fruits6x6, random_pos6x6)
@@ -772,8 +739,8 @@ def memory6x6(number_of_players):
         screen.blit(player_3, (640, 10))
         screen.blit(player_4, (640, 50))
         screen.blit(fin, (0, 200))
-        screen.blit(win, (50, 100))
-        screen.blit(instructions, (0, 400))
+        screen.blit(win, (124, 200))
+        screen.blit(instructions, (180, 400))
 
         pygame.display.flip()
         clock.tick(fps)
