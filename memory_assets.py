@@ -41,8 +41,6 @@ Sound and Music
 '''
 pygame.mixer.init()
 
-background_music = pygame.mixer.Sound('audio/background_music32kbps.mp3')
-
 coin = pygame.mixer.Sound('audio/coin.wav')
 cancel = pygame.mixer.Sound('audio/cancel.wav')
 good = pygame.mixer.Sound('audio/good.wav')

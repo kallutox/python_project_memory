@@ -115,6 +115,7 @@ def open_cards4x4(no_of_player):
                     rectangles4x4[card_2].move_ip(70, 0)
 
                     if check_cards(card_1, card_2) is True:
+
                         rectangles4x4[card_1].move_ip(0, 2000)
                         rectangles4x4[card_2].move_ip(0, 2000)
                         score_1 += 10
@@ -123,6 +124,8 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             fin = fin_font.render('ALL FRUITS FOUND!', True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -153,6 +156,8 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -187,6 +192,8 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M '
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -221,6 +228,8 @@ def open_cards4x4(no_of_player):
                         chosen = 0
 
                         if score_overall == 80:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -277,6 +286,8 @@ def open_cards6x6(no_of_player):
                         chosen = 0
 
                         if score_overall == 180:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             fin = fin_font.render('ALL FRUITS FOUND!', True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -307,6 +318,8 @@ def open_cards6x6(no_of_player):
                         chosen = 0
 
                         if score_overall == 180:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -341,6 +354,8 @@ def open_cards6x6(no_of_player):
                         chosen = 0
 
                         if score_overall == 180:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -375,6 +390,8 @@ def open_cards6x6(no_of_player):
                         chosen = 0
 
                         if score_overall == 180:
+                            pygame.mixer.music.load('audio/good.wav')
+                            pygame.mixer.music.play(0)
                             win = win_font.render(who_won(), True, black, grey)
                             instructions = instructions_font.render('   Press R to restart | Press Q to quit | Press M'
                                                                     + ' to return to Menu  ', True, black, grey)
@@ -464,6 +481,8 @@ def close_cards4x4():
     rectangles4x4[card_2].move_ip(-70, 0)
 
 
+
+
 # hides a pair of cards in a 6x6 game
 def close_cards6x6():
     global card_1
@@ -472,45 +491,84 @@ def close_cards6x6():
     rectangles6x6[card_2].move_ip(-2000, 0)
 
 
+
 # checks whether two cards are the same
 def check_cards(c1, c2):
     if c1 == 0 and c2 == 1 or c1 == 1 and c2 == 0:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 2 and c2 == 3 or c1 == 3 and c2 == 2:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 4 and c2 == 5 or c1 == 5 and c2 == 4:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 6 and c2 == 7 or c1 == 7 and c2 == 6:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 8 and c2 == 9 or c1 == 9 and c2 == 8:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 10 and c2 == 11 or c1 == 11 and c2 == 10:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 12 and c2 == 13 or c1 == 13 and c2 == 12:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 14 and c2 == 15 or c1 == 15 and c2 == 14:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 16 and c2 == 17 or c1 == 17 and c2 == 16:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 18 and c2 == 19 or c1 == 19 and c2 == 18:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 20 and c2 == 21 or c1 == 21 and c2 == 20:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 22 and c2 == 23 or c1 == 23 and c2 == 22:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 24 and c2 == 25 or c1 == 25 and c2 == 24:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 26 and c2 == 27 or c1 == 27 and c2 == 26:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 28 and c2 == 29 or c1 == 29 and c2 == 28:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 30 and c2 == 31 or c1 == 31 and c2 == 30:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 32 and c2 == 33 or c1 == 33 and c2 == 32:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     elif c1 == 34 and c2 == 35 or c1 == 35 and c2 == 34:
+        pygame.mixer.music.load('audio/coin.wav')
+        pygame.mixer.music.play(0)
         return True
     else:
+        pygame.mixer.music.load('audio/wrong.wav')
+        pygame.mixer.music.play(0)
         return False
 
 
@@ -607,16 +665,21 @@ def memory4x4(number_of_players):
             if score_overall == 80:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_r:
+                        pygame.mixer.music.load('audio/start.wav')
+                        pygame.mixer.music.play(0)
                         restart_game(random_pos4x4)
                         draw_fruits_random(fruits4x4, random_pos4x4)
                         move_rectangles_random(rectangles4x4, random_pos4x4)
 
                     if event.key == pygame.K_q:
+
                         pygame.quit()
                         quit()
 
                     '''
                     if event.key == pygame.K_m:
+                        pygame.mixer.music.load('audio/cancel.wav')
+                        pygame.mixer.music.play(0)
                         import fruit_memory
                         fruit_memory.main_menu.enable()
 
@@ -678,6 +741,8 @@ def memory6x6(number_of_players):
             if score_overall == 180:
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_r:
+                        pygame.mixer.music.load('audio/start.wav')
+                        pygame.mixer.music.play(0)
                         restart_game(random_pos6x6)
                         draw_fruits_random(fruits6x6, random_pos6x6)
                         move_rectangles_random(rectangles6x6, random_pos6x6)

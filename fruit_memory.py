@@ -46,12 +46,16 @@ pygame.display.set_icon(fruit_memory_icon)
 # prints the selected number of players
 def change_player_num(n):
     print ('Selected number of players: {0}'.format(n))
+    pygame.mixer.music.load('audio/switch.wav')
+    pygame.mixer.music.play(0)
     PLAYERS[0] = n
 
 
 # prints the selected size of field
 def change_field_size(f):
     print ('Selected size of field: {0}'.format(f))
+    pygame.mixer.music.load('audio/switch.wav')
+    pygame.mixer.music.play(0)
     FIELD[0] = f
 
 
@@ -61,7 +65,8 @@ def main_background():
 
 # sets game according to chosen parameters
 def game_function(players, field):
-
+    pygame.mixer.music.load('audio/start.wav')
+    pygame.mixer.music.play(0)
     players = players[0]
     field = field[0]
 
@@ -137,6 +142,7 @@ def main_loop():
         events = pygame.event.get()
         for event in events:
             if event.type == QUIT:
+
                 exit()
 
         # menu of game
